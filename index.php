@@ -20,9 +20,9 @@ if(isset($_SESSION['usuario'])){
 <html>
 
 <head>
-    <title>Actividad 6</title>
+    <title>Laboratorio final</title>
     <meta charset="utf-8">
-    <meta name="description" content="Usando php: SESIONES">
+    <meta name="description" content="LAB 4">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

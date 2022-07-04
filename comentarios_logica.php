@@ -1,13 +1,17 @@
 <?php
 require_once("conexion.php");
 
-$servidor = "localhost";
-$usuario = "root";
-$clave = "";
-$base_datos = "bd_redsocial";
-$conexion = new Conexion($servidor,$usuario,$clave,$base_datos);
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db = substr($cleardb_url["path"],1);
+$active_group = 'default';
+$query_builder = TRUE;
 
-$c = new Conexion($servidor,$usuario,$clave,$base_datos);
+$c = new Conexion($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+// $c = new Conexion($servidor,$usuario,$clave,$base_datos);
 
 function obtener_creador($conexion,$id_comentario){
     $creador = $conexion->consulta("SELECT DISTINCT u.nombre FROM `tbl_comentario` c JOIN `tbl_usuario` u WHERE c.id_usuario LIKE u.id AND c.id LIKE '$id_comentario' "); 
