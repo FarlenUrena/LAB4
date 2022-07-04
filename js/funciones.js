@@ -71,7 +71,7 @@ function cerrarsesion(){
         url: "autentificacion.php",
         data: { cerrarsesion:'cerrarsesion' },
     }).done(function(){
-        location.href= 'login.php';
+        location.href= 'index.php';
     }).fail(function(){
         alert("Problemas al cerrar la sesión.");
     })

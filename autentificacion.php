@@ -53,7 +53,7 @@ if(isset($_POST['cerrarsesion'])){
 
     session_start(); //to ensure you are using same session
     session_destroy(); //destroy the session
-    //header("Location: /login.php"); //to redirect back to "index.php" after logging out
+    //header("Location: /index.php"); //to redirect back to "index.php" after logging out
     exit();
         //header('HTTP/1.1 200 OK');
 }
