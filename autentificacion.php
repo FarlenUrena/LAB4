@@ -1,18 +1,18 @@
 <?php
 require_once("conexion.php");
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$servidor = $url["localhost"];
-$usuario = $url["root"];
-$clave = $url[""];
-$base_datos = substr($url["bd_redsocial"],1);
+// $servidor = $url["localhost"];
+// $usuario = $url["root"];
+// $clave = $url[""];
+// $base_datos = substr($url["bd_redsocial"],1);
 
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $cleardb_server = $cleardb_url["host"];
 $cleardb_username = $cleardb_url["user"];
 $cleardb_password = $cleardb_url["pass"];
-$cleardb_db = substr($cleardb_url["path"],1);
+$cleardb_db = substr($cleardb_url["heroku_af61d378081d9d3"],1);
 $active_group = 'default';
 $query_builder = TRUE;
 
