@@ -1,13 +1,19 @@
 <?php
 require_once("conexion.php");
 
-$servidor = "localhost";
-$usuario = "root";
-$clave = "";
-$base_datos = "bd_redsocial";
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$servidor = $url["localhost"];
+$usuario = $url["root"];
+$clave = $url[""];
+$base_datos = substr($url["bd_redsocial"],1);
+
 $conexion = new Conexion($servidor,$usuario,$clave,$base_datos);
 
-
+            // $this->servidor = $url[$servidor];
+            // $this->usuario = $url[$usuario];
+            // $this->clave = $url[$clave];
+            // $this->base_datos = substr($url[$base_datos],1);
 
 
 
