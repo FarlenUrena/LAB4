@@ -6,13 +6,13 @@
         private $clave;
         private $base_datos;
         private $conexion;
-        public $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
+        
         function __construct($servidor,$usuario,$clave,$base_datos){
-            $this->servidor = $this->url[$servidor];
-            $this->usuario = $this->url[$usuario];
-            $this->clave = $this->url[$clave];
-            $this->base_datos = substr($this->url[$base_datos],1);
+            $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+            $this->servidor = $url[$servidor];
+            $this->usuario = $url[$usuario];
+            $this->clave = $url[$clave];
+            $this->base_datos = substr($url[$base_datos],1);
             // $db = substr($url["path"], 1);
             $this->conectar_base_datos();
 
