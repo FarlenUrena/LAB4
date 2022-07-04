@@ -1,5 +1,15 @@
 
 
+<!-- valida si hay una sesión abierta, si no hay, se redirige al login -->
+<?php
+
+session_start();
+if(!isset($_SESSION['usuario'])){
+    // alert("asdfasdfa");
+    header('Location: index.php');
+}
+?>
+
 <?php include_once("comentarios_logica.php"); ?>
 
 <?php
